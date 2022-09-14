@@ -31,3 +31,6 @@ if ('serviceWorker' in navigator) {
 } else {
   console.error('Service workers are not supported in this browser.');
 }
+
+
+// looks completed basically self explanatory (remove before turn in)

@@ -12,8 +12,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 const config = {
   entry: {
-    app: './public/index.js',
-    db: './public/db.js',
+    app: './src/js/index.js',
   },
   output: {
     path: __dirname + '/dist',
@@ -22,7 +21,7 @@ const config = {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './index.html',
     }),
     new WebpackPwaManifest({
       fingerprints: false,
@@ -43,8 +42,9 @@ const config = {
       ],
     }),
     new InjectManifest({
-      swSrc: './public/service-worker.js',
-      swDest: 'service-worker.js',
+      swSrc: './src-sw.js',
+      swDest: 'sw.js',
+      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
     }),
   ],
   module: {
