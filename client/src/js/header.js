@@ -11,4 +11,3 @@ just another text editor
 
 export { header };
 
-// self explanatory (remove before turn in)

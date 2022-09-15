@@ -40,6 +40,3 @@ export default class {
     });
   }
 }
-
-
-// looks completed basically self explanatory (remove before turn in)

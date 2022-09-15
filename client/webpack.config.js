@@ -40,6 +40,13 @@ const config = {
     new InjectManifest({
       swSrc: './src-sw.js',
       swDest: 'manifest.js',
+      exclude: [
+        /\.map$/,
+        /manifest$/,
+        /\.htaccess$/,
+        /service-worker\.js$/,
+        /sw\.js$/,
+      ],
     }),
   ],
   module: {
