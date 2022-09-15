@@ -14,10 +14,6 @@ const config = {
   entry: {
     app: './src/js/index.js',
   },
-  output: {
-    path: __dirname + '/dist',
-    filename: '[name].bundle.js',
-  },
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,7 +22,7 @@ const config = {
     new WebpackPwaManifest({
       fingerprints: false,
       name: 'Just Another Text Editor',
-      short_name: 'JATE',
+      short_name: 'J.A.T.E',
       description: 'A simple text editor',
       background_color: '#01579b',
       theme_color: '#ffffff',
@@ -43,8 +39,7 @@ const config = {
     }),
     new InjectManifest({
       swSrc: './src-sw.js',
-      swDest: 'sw.js',
-      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+      swDest: 'manifest.js',
     }),
   ],
   module: {
@@ -68,6 +63,10 @@ const config = {
         use: ['style-loader', 'css-loader'],
       },  
     ],
+  },
+  output: {
+    path: __dirname + '/dist',
+    filename: '[name].bundle.js',
   },
 };
 
